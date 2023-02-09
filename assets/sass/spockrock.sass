@@ -1,0 +1,22 @@
+@keyframes shakeleft
+    34%
+        transform: scale(-1.08, 1.08) rotate(65deg)
+    67%
+        transform: scale(-1.08, 1.08) rotate(-45deg)
+@keyframes shakeright
+    34%
+        transform: scale(1.08, 1.08) rotate(65deg)
+    67%
+        transform: scale(1.08, 1.08) rotate(-45deg)
+    
+.bettleshow
+    p:first-of-type span:last-of-type
+        transform: scale(-1, 1)
+    p:first-of-type span:last-of-type.clicked
+        animation: shakeleft .35s ease-out
+    p:last-of-type span:last-of-type.clicked
+        animation: shakeright .35s ease-out
+
+.yrchioceBtn
+    background-color: $primary-color
+    box-shadow: 4px 4px 8px 0 rgb(0 0 0 / 25%), inset -4px -4px 8px 0 rgb(0 0 0 / 25%), inset 4px 4px 8px 0 rgb(255 255 255 / 40%)
