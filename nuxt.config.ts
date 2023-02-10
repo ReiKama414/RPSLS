@@ -5,7 +5,18 @@ export default defineNuxtConfig({
     strict: true
   },
 
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: '@import "~/assets/sass/global.sass"',
+        }
+      }
+    }
+  },
+
   app: {
+    baseURL: '/RPSLS/',
     head: {
       title: 'Spock Rock Game | Kama',
       charset: 'UTF-8',
