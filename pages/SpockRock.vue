@@ -10,7 +10,7 @@ export default {
                ],
       playerChoice: { title: 'Rock', obj: '🤛🏻' },
       computerChoice: { title: 'Rock', obj: '🤛🏻' },
-      result: '',
+      result: 'Are you ready ?',
       playerScore: 0,
       computerScore: 0,
       clickedAnimate: false,
@@ -41,9 +41,9 @@ export default {
       }, 350);
     },
     reset() {
-      this.playerChoice = '';
-      this.computerChoice = '';
-      this.result = '';
+      this.playerChoice = { title: 'Rock', obj: '🤛🏻' };
+      this.computerChoice = { title: 'Rock', obj: '🤛🏻' };
+      this.result = 'Are you ready ?';
       this.playerScore = 0;
       this.computerScore = 0;
     }
@@ -52,28 +52,15 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col items-center">
-    <h1>Spock Rock Game</h1>
+  <div class="flex flex-col items-center relative z-10">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl my-6 glitchtext" data-text="Spock Rock Game">Spock Rock Game</h1>
 
-    <div class="scoreboard">
-      <h2>Scoreboard</h2>
-      <table>
-        <tbody>
-          <tr>
-            <td>{{ playerScore }}</td>
-            <td>{{ computerScore }}</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th>You</th>
-            <th>Bot</th>
-          </tr>
-        </tfoot>
-      </table>
+    <div class="flex flex-row justify-center scoreboard w-full">
+      <p>{{ playerScore }}</p>：<p>{{ computerScore }}</p>
     </div>
+    <p>{{ result }}</p>
     
-    <div class="bettleshow flex flex-row justify-center w-full my-8 px-4">
+    <div class="bettleshow flex flex-row justify-center w-full mt-8 mb-12 px-4">
       <p class="relative mx-2 w-1/2 text-center">
         <span class="absolute left-0">You</span>
         <span class="text-9xl inline-block" :class="{ clicked: clickedAnimate }"> {{ playerChoice.obj }} </span>
@@ -84,19 +71,18 @@ export default {
       </p>
     </div>
 
-    <p>Choose your weapon:</p>
-    <div>
+    <p class="mb-6">Human . . . Choose your weapon . . .</p>
+    <div class="flex flex-row justify-center mb-6">
       <button
         v-for="choice in choices"
         :key="choice"
         @click="play(choice)"
-        class="yrchioceBtn text-6xl pb-1 w-28 h-28 m-3 rounded-2xl"
+        class="yrchioceBtn text-2xl md:text-6xl pb-1 w-12 h-12 md:w-28 md:h-28 m-3 rounded-full md:rounded-2xl "
       >
         {{ choice.obj }}
       </button>
     </div>
-    <p>Result: {{ result }}</p>
-    <button v-on:click="reset">Reset</button>
+    <button @click="reset" class="mb-3">Reset</button>
   </div>
 </template>
 

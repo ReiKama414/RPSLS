@@ -8,8 +8,13 @@
         transform: scale(1.08, 1.08) rotate(65deg)
     67%
         transform: scale(1.08, 1.08) rotate(-45deg)
-    
+
+.scoreboard
+    max-width: 22.5rem
+
 .bettleshow
+    p
+        max-width: 22.5rem
     p:first-of-type span:last-of-type
         transform: scale(-1, 1)
     p:first-of-type span:last-of-type.clicked
@@ -18,5 +23,12 @@
         animation: shakeright .35s ease-out
 
 .yrchioceBtn
-    background-color: $primary-color
-    box-shadow: 4px 4px 8px 0 rgb(0 0 0 / 25%), inset -4px -4px 8px 0 rgb(0 0 0 / 25%), inset 4px 4px 8px 0 rgb(255 255 255 / 40%)
+    background: $bg-color
+    border: .125rem solid $cyber-color1
+    box-shadow: inset 0 0 .5em 0 $cyber-color1, 0 0 .5em 0 $cyber-color2
+    transition: background .25s, box-shadow .25s
+    &:hover
+        background: $cyber-color1
+        box-shadow: inset 0 0 .5em 0 $cyber-color1, 0 0 .25em 0 $cyber-color1, 0 0 1.25em 0 $cyber-color2
+    // background-color: $primary-color
+    // box-shadow: 4px 4px 8px 0 rgb(0 0 0 / 25%), inset -4px -4px 8px 0 rgb(0 0 0 / 25%), inset 4px 4px 8px 0 rgb(255 255 255 / 40%)

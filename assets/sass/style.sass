@@ -1,7 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap')
+// @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap')
+
+@font-face
+    font-family: Teroxia
+    src: url("assets/fonts/TeroxiaDemoPersonalUse-GOxoD.otf") format("opentype")
+
+@font-face
+    font-family: AlienWorld
+    src: url("assets/fonts/AlienWorld-owj0x.ttf") format("truetype")
     
 html
-  font-family: 'Comfortaa', cursive, 'Noto Sans CJK TC', 'Microsoft JhengHei', PingFang, STHeiti, Helvetica , Arial , sans-serif , serif
+  font-family: AlienWorld, cursive, 'Noto Sans CJK TC', 'Microsoft JhengHei', PingFang, STHeiti, Helvetica , Arial , sans-serif , serif
   font-size: 16px
   color: $text-color
   background: $bg-color
+
+.index-bg
+  mix-blend-mode: difference
+  background-image: repeating-linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.05) 0.5%, transparent 1%)
+  pointer-events: none
+
+a:hover
+  color: $primary-color
+  text-shadow: 0 0 5px $primary-color
+  
+/*** Glitch Text ***/
+
+@keyframes glitch
+  1%
+    transform: rotateX(10deg) skewX(90deg)
+  2%
+    transform: rotateX(0deg) skewX(0deg)
+@keyframes noise-anim-1
+  $steps: 30
+  @for $i from 1 through $steps
+    #{percentage($i * calc(1 / $steps))}
+      $top: random(100)
+      $bottom: random(101 - $top)
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0)
+@keyframes noise-anim-2
+  $steps: 30
+  @for $i from 0 through $steps
+    #{percentage($i * calc(1 / $steps))}
+      $top: random(100)
+      $bottom: random(101 - $top)
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0)
+
+.glitchtext
+  font-family: Teroxia
+  position: relative
+  // text-shadow: 0 -5px 10px rgba(255, 255, 255, 1), 0 0 5px rgba(255, 255, 255, 0), 0 0 10px rgba(255, 255, 255, 0), 0 0 15px rgba(255, 255, 255, 0), 0 0 20px rgba(255, 255, 255, 0)
+  transform: skewX(0deg)
+  user-select: none
+  &::before,
+  &::after
+    @include size(100%)
+    content: attr(data-text)
+    position: absolute
+    top: 0
+    background: black
+  &::before
+    left: -2px
+    text-shadow: -5px 0 magenta
+    animation: noise-anim-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite
+  &::after
+    left: 2px
+    text-shadow: -5px 0 cyan
+    animation: noise-anim-2 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite
+
+/*****/
