@@ -4,7 +4,7 @@
     "build": "ts-node nuxt.config.ts && nuxt build",
     "start": "ts-node nuxt.config.ts && nuxt start",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "ts-node nuxt.config.ts && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
