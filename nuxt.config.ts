@@ -1,5 +1,3 @@
-import { defineNuxtConfig } from 'nuxt/config'
-
 export default defineNuxtConfig({
   typescript: {
     strict: true
@@ -16,6 +14,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL: '/RPSLS/',
     head: {
       title: 'Spock Rock Game | Kama',
       charset: 'UTF-8',
@@ -27,7 +26,6 @@ export default defineNuxtConfig({
         { property: 'og:locale', content: 'zh-tw' }
       ],
     },
-    baseURL: '/RPSLS/'
   },
 
   modules: ['@nuxtjs/tailwindcss'],

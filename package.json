@@ -1,11 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "build": "nuxt-ts build",
+    "dev": "nuxt-ts dev",
+    "generate": "nuxt-ts generate",
+    "preview": "nuxt-ts preview",
+    "postinstall": "nuxt-ts prepare"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^2.1.0",
