@@ -3,10 +3,10 @@
   "scripts": {
     "build": "ts-node nuxt.config.ts && npx nuxt build",
     "start": "ts-node nuxt.config.ts && npx nuxt start",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "ts-node nuxt.config.ts && npx nuxt dev",
+    "generate": "ts-node nuxt.config.ts && npx nuxt generate",
+    "preview": "ts-node nuxt.config.ts && npx nuxt preview",
+    "postinstall": "ts-node nuxt.config.ts && npx nuxt prepare"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^2.1.0",
