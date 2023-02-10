@@ -1,6 +1,4 @@
-import { defineNuxtConfig } from 'nuxt/config'
-
-export default defineNuxtConfig({
+module.exports = {
   typescript: {
     strict: true
   },
@@ -31,4 +29,4 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxtjs/tailwindcss'],
-})
+}
