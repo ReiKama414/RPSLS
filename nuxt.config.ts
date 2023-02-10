@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL: '/RPSLS/',
     head: {
       title: 'Spock Rock Game | Kama',
       charset: 'UTF-8',
