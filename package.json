@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "ts-node nuxt.config.ts && npx nuxt build",
-    "start": "ts-node nuxt.config.ts && npx nuxt start",
+    "build": "ts-node nuxt.config.ts && nuxt build",
+    "start": "ts-node nuxt.config.ts && nuxt start",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
