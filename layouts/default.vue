@@ -5,6 +5,9 @@
       <NuxtLink to="/SpockRock">Game</NuxtLink>
     </div>
     <slot />
+    <footer class="fixed bottom-2 left-0 right-0">
+      <p class="text-xs w-max mx-auto">Copyrights &copy; 2023 <a href="https://reikama414.github.io/" target="__blank">Kama</a>, All Rights Reserved.</p>
+    </footer>
     <div class="absolute inset-0 index-bg"></div>
   </div>
 </template>
